@@ -6,7 +6,9 @@ Hello,
 Welcome to my files for programming for big data. 
 
 CA1 is the science calc
-CA2 is the car dealership 
+CA2 is the car dealership - this is not good code 
+CA3 was R Practical 
+CA4 is WIP
 
 
 
