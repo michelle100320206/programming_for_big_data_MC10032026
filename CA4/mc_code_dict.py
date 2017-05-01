@@ -44,7 +44,7 @@ if __name__ == '__main__':
 #printing to csv (assistance from stackoverflow)   
     
 keys = commits[0].keys()
-with open ('test.csv', 'wb') as output_file: 
+with open ('Michelle_10032026_writetocsv.csv', 'wb') as output_file: 
     dict_writer = csv.DictWriter (output_file, keys)
     dict_writer.writeheader ()
     dict_writer.writerows (commits)
