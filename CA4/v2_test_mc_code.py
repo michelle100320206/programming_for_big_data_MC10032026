@@ -22,7 +22,7 @@ class TestCommits(unittest.TestCase): #creating a oject - to test the code in ot
         self.assertEqual('r1551925', commits[0]['revision'])
         
     def test_number_of_authors(self): 
-        commits = get_commits(self.data)
+        authors = get_authors(self.data)
         self.assertEqual (10, len(authors))
         self.assertEqual(191, len(authors ['Thomas']))
 
