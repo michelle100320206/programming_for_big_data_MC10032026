@@ -11,7 +11,7 @@
       <connection class='federated'>
         <named-connections>
           <named-connection caption='stats in excel' name='excel-direct.0owbr9o0vccglj124xo4f02b2zp7'>
-            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/carrm/Desktop/programming_for_big_data_MC10032026/CA4/stats in excel .xlsm' interpretationMode='0' password='' server='' validate='no' />
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/carrm/Desktop/programming_for_big_data_MC10032026/CA4/Final_ Stats/stats in excel .xlsm' interpretationMode='0' password='' server='' validate='no' />
           </named-connection>
         </named-connections>
         <relation connection='excel-direct.0owbr9o0vccglj124xo4f02b2zp7' name='Cleaned spilt Tableau ' table='[&apos;Cleaned spilt Tableau $&apos;]' type='table'>
@@ -154,7 +154,7 @@
       <column caption='Author 1' datatype='string' name='[author]' role='dimension' type='nominal' />
       <column caption='Date 1' datatype='string' name='[date]' role='dimension' type='nominal' />
       <column caption='Revision 1' datatype='string' name='[revision]' role='dimension' type='nominal' />
-      <layout dim-ordering='alphabetic' dim-percentage='0.550874' measure-ordering='alphabetic' measure-percentage='0.449126' show-structure='true' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.651033' measure-ordering='alphabetic' measure-percentage='0.348967' show-structure='true' />
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;Ireland&quot;' />
       </semantic-values>
@@ -162,6 +162,13 @@
   </datasources>
   <worksheets>
     <worksheet name='Sheet 2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Area line -  month v no or records (commits)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
       <table>
         <view>
           <datasources>
