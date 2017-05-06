@@ -1,0 +1,615 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 10200.17.0328.0755                               -->
+<workbook source-build='10.2.1 (10200.17.0328.0755)' source-platform='win' version='10.2' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Michelle_10032026_writetocsv (Michelle_10032026_writetocsv)' inline='true' name='federated.1lgaj311uxv9tv11ysp7r06nao9i' version='10.2'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Michelle_10032026_writetocsv' name='excel-direct.0u7w0b508xr9jz1bkxdie0ve7l04'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/carrm/Desktop/CA4/Old Versions/Michelle_10032026_writetocsv.csv' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+          <named-connection caption='stats in excel' name='excel-direct.03ubo5g1m0bftn1fry5wx0t1jlun'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/carrm/Desktop/CA4/Old Versions/stats in excel .xlsm' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation connection='excel-direct.03ubo5g1m0bftn1fry5wx0t1jlun' name='Master Data _ V4 ' table='[&apos;Master Data _ V4 $&apos;]' type='table'>
+          <columns gridOrigin='A1:D423:no:A1:D423:0' header='yes' outcome='6'>
+            <column datatype='string' name='date' ordinal='0' />
+            <column datatype='string' name='number_of_lines' ordinal='1' />
+            <column datatype='string' name='author' ordinal='2' />
+            <column datatype='string' name='revision' ordinal='3' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>date</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[date]</local-name>
+            <parent-name>[Master Data _ V4 ]</parent-name>
+            <remote-alias>date</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIE_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>number_of_lines</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[number_of_lines]</local-name>
+            <parent-name>[Master Data _ V4 ]</parent-name>
+            <remote-alias>number_of_lines</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIE_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>author</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[author]</local-name>
+            <parent-name>[Master Data _ V4 ]</parent-name>
+            <remote-alias>author</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIE_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>revision</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[revision]</local-name>
+            <parent-name>[Master Data _ V4 ]</parent-name>
+            <remote-alias>revision</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIE_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Master Data _ V4 ]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:D423:no:A1:D423:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Author 1' datatype='string' name='[author]' role='dimension' type='nominal' />
+      <column caption='Year' datatype='real' datatype-customized='true' name='[date - Split 3]' role='dimension' type='ordinal' user:SplitFieldIndex='3' user:SplitFieldOrigin='[federated.1lgaj311uxv9tv11ysp7r06nao9i].[date]'>
+        <calculation class='tableau' formula='FLOAT(TRIM( SPLIT( [date], &quot;-&quot;, 1 ) ))' />
+      </column>
+      <column caption='Month' datatype='integer' datatype-customized='true' name='[date - Split 4]' role='dimension' type='ordinal' user:SplitFieldIndex='4' user:SplitFieldOrigin='[federated.1lgaj311uxv9tv11ysp7r06nao9i].[date]'>
+        <calculation class='tableau' formula='INT(TRIM( SPLIT( [date], &quot;-&quot;, 2 ) ))' />
+      </column>
+      <column caption='Time ' datatype='string' name='[date - Split 5]' role='dimension' type='nominal' user:SplitFieldIndex='5' user:SplitFieldOrigin='[federated.1lgaj311uxv9tv11ysp7r06nao9i].[date]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( [date], &quot;-&quot;, 3 ) )' />
+      </column>
+      <column caption='Date 1' datatype='string' name='[date]' role='dimension' type='nominal' />
+      <column caption='Number Of Lines' datatype='string' name='[number_of_lines]' role='dimension' type='nominal' />
+      <column caption='Revision 1' datatype='string' name='[revision]' role='dimension' type='nominal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.599364' measure-ordering='alphabetic' measure-percentage='0.400636' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Author total commits </run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Michelle_10032026_writetocsv (Michelle_10032026_writetocsv)' name='federated.1lgaj311uxv9tv11ysp7r06nao9i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1lgaj311uxv9tv11ysp7r06nao9i'>
+            <column caption='Author 1' datatype='string' name='[author]' role='dimension' type='nominal' />
+            <column caption='Year' datatype='real' datatype-customized='true' name='[date - Split 3]' role='dimension' type='ordinal' user:SplitFieldIndex='3' user:SplitFieldOrigin='[federated.1lgaj311uxv9tv11ysp7r06nao9i].[date]'>
+              <calculation class='tableau' formula='FLOAT(TRIM( SPLIT( [date], &quot;-&quot;, 1 ) ))' />
+            </column>
+            <column caption='Month' datatype='integer' datatype-customized='true' name='[date - Split 4]' role='dimension' type='ordinal' user:SplitFieldIndex='4' user:SplitFieldOrigin='[federated.1lgaj311uxv9tv11ysp7r06nao9i].[date]'>
+              <calculation class='tableau' formula='INT(TRIM( SPLIT( [date], &quot;-&quot;, 2 ) ))' />
+            </column>
+            <column caption='Date 1' datatype='string' name='[date]' role='dimension' type='nominal' />
+            <column-instance column='[author]' derivation='None' name='[none:author:nk]' pivot='key' type='nominal' />
+            <column-instance column='[date - Split 3]' derivation='None' name='[none:date - Split 3:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[date - Split 4]' derivation='None' name='[none:date - Split 4:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[revision]' derivation='None' name='[none:revision:nk]' pivot='key' type='nominal' />
+            <column caption='Revision 1' datatype='string' name='[revision]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1lgaj311uxv9tv11ysp7r06nao9i].[none:author:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:author:nk]' />
+              <groupfilter function='union'>
+                <groupfilter function='member' level='[none:author:nk]' member='&quot;/OU=Domain Control Validated/CN=svn.company.net&quot;' />
+                <groupfilter function='member' level='[none:author:nk]' member='&quot;ajon0002&quot;' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1lgaj311uxv9tv11ysp7r06nao9i].[none:author:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <lod column='[federated.1lgaj311uxv9tv11ysp7r06nao9i].[none:revision:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#499894' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.1lgaj311uxv9tv11ysp7r06nao9i].[none:date - Split 3:ok] / [federated.1lgaj311uxv9tv11ysp7r06nao9i].[none:date - Split 4:ok])</rows>
+        <cols>[federated.1lgaj311uxv9tv11ysp7r06nao9i].[none:author:nk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 1 (2)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Michelle_10032026_writetocsv (Michelle_10032026_writetocsv)' name='federated.1lgaj311uxv9tv11ysp7r06nao9i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1lgaj311uxv9tv11ysp7r06nao9i'>
+            <column caption='Author 1' datatype='string' name='[author]' role='dimension' type='nominal' />
+            <column caption='Year' datatype='real' datatype-customized='true' name='[date - Split 3]' role='dimension' type='ordinal' user:SplitFieldIndex='3' user:SplitFieldOrigin='[federated.1lgaj311uxv9tv11ysp7r06nao9i].[date]'>
+              <calculation class='tableau' formula='FLOAT(TRIM( SPLIT( [date], &quot;-&quot;, 1 ) ))' />
+            </column>
+            <column caption='Month' datatype='integer' datatype-customized='true' name='[date - Split 4]' role='dimension' type='ordinal' user:SplitFieldIndex='4' user:SplitFieldOrigin='[federated.1lgaj311uxv9tv11ysp7r06nao9i].[date]'>
+              <calculation class='tableau' formula='INT(TRIM( SPLIT( [date], &quot;-&quot;, 2 ) ))' />
+            </column>
+            <column caption='Time ' datatype='string' name='[date - Split 5]' role='dimension' type='nominal' user:SplitFieldIndex='5' user:SplitFieldOrigin='[federated.1lgaj311uxv9tv11ysp7r06nao9i].[date]'>
+              <calculation class='tableau' formula='TRIM( SPLIT( [date], &quot;-&quot;, 3 ) )' />
+            </column>
+            <column caption='Date 1' datatype='string' name='[date]' role='dimension' type='nominal' />
+            <column-instance column='[author]' derivation='None' name='[none:author:nk]' pivot='key' type='nominal' />
+            <column-instance column='[date - Split 3]' derivation='None' name='[none:date - Split 3:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[date - Split 4]' derivation='None' name='[none:date - Split 4:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[date - Split 5]' derivation='None' name='[none:date - Split 5:nk]' pivot='key' type='nominal' />
+            <column-instance column='[revision]' derivation='None' name='[none:revision:nk]' pivot='key' type='nominal' />
+            <column caption='Revision 1' datatype='string' name='[revision]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1lgaj311uxv9tv11ysp7r06nao9i].[none:author:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:author:nk]' />
+              <groupfilter function='union'>
+                <groupfilter function='member' level='[none:author:nk]' member='&quot;/OU=Domain Control Validated/CN=svn.company.net&quot;' />
+                <groupfilter function='member' level='[none:author:nk]' member='&quot;ajon0002&quot;' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1lgaj311uxv9tv11ysp7r06nao9i].[none:author:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <lod column='[federated.1lgaj311uxv9tv11ysp7r06nao9i].[none:revision:nk]' />
+              <lod column='[federated.1lgaj311uxv9tv11ysp7r06nao9i].[none:date - Split 5:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#499894' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.1lgaj311uxv9tv11ysp7r06nao9i].[none:date - Split 3:ok] / [federated.1lgaj311uxv9tv11ysp7r06nao9i].[none:date - Split 4:ok])</rows>
+        <cols>[federated.1lgaj311uxv9tv11ysp7r06nao9i].[none:author:nk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Authors '>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <datasources>
+        <datasource caption='Michelle_10032026_writetocsv (Michelle_10032026_writetocsv)' name='federated.1lgaj311uxv9tv11ysp7r06nao9i' />
+      </datasources>
+      <datasource-dependencies datasource='federated.1lgaj311uxv9tv11ysp7r06nao9i'>
+        <column caption='Author 1' datatype='string' name='[author]' role='dimension' type='nominal' />
+        <column-instance column='[author]' derivation='None' name='[none:author:nk]' pivot='key' type='nominal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='100000' id='5' param='horz' type='layout-flow' w='100000' x='0' y='0'>
+            <zone h='100000' id='3' type='layout-basic' w='86700' x='0' y='0'>
+              <zone h='100000' id='1' name='Sheet 1' w='86700' x='0' y='0' />
+            </zone>
+            <zone fixed-size='133' h='100000' id='4' is-fixed='true' param='vert' type='layout-flow' w='13300' x='86700' y='0'>
+              <zone h='56000' id='6' name='Sheet 1' param='[federated.1lgaj311uxv9tv11ysp7r06nao9i].[none:author:nk]' type='filter' w='13300' x='86700' y='0' />
+            </zone>
+          </zone>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout active='true' name='Desktop'>
+          <size sizing-mode='automatic' />
+        </devicelayout>
+      </devicelayouts>
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='2' source-height='59'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.1lgaj311uxv9tv11ysp7r06nao9i].[none:author:nk]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1lgaj311uxv9tv11ysp7r06nao9i].[none:author:nk]</field>
+            <field>[federated.1lgaj311uxv9tv11ysp7r06nao9i].[none:date - Split 3:ok]</field>
+            <field>[federated.1lgaj311uxv9tv11ysp7r06nao9i].[none:date - Split 4:ok]</field>
+            <field>[federated.1lgaj311uxv9tv11ysp7r06nao9i].[none:revision:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+    <window class='worksheet' name='Sheet 1 (2)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1lgaj311uxv9tv11ysp7r06nao9i].[none:author:nk]</field>
+            <field>[federated.1lgaj311uxv9tv11ysp7r06nao9i].[none:date - Split 3:ok]</field>
+            <field>[federated.1lgaj311uxv9tv11ysp7r06nao9i].[none:date - Split 4:ok]</field>
+            <field>[federated.1lgaj311uxv9tv11ysp7r06nao9i].[none:date - Split 5:nk]</field>
+            <field>[federated.1lgaj311uxv9tv11ysp7r06nao9i].[none:revision:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+    <window class='dashboard' maximized='true' name='Authors '>
+      <viewpoints>
+        <viewpoint name='Sheet 1' />
+      </viewpoints>
+      <active id='6' />
+      <device-preview visible='true'>
+        <device name='Generic Desktop Monitor' type='Desktop' />
+      </device-preview>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Authors ' width='192'>
+      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
+      AAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+      AElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 1 (2)' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 2' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAB2HAAAdhwGP5fFl
+      AAACFUlEQVR4nO3TMQEAIAzAMMC/5yFjRxMFfXpnZg5Eve0A2GQA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQD
+      kGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBp
+      BiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA
+      0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDN
+      AKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxA
+      mgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKR9Y+0F
+      fBUOM1sAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
